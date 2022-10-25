@@ -7,6 +7,7 @@ use std::net::TcpListener;
 
 fn main() {
     let mut handle = HttpHandler::new();
+    handle.turn_threading();
     let port = match std::env::var("PORT") {
         Ok(e) => e.parse::<i32>().unwrap(),
         Err(_) => 8000,
